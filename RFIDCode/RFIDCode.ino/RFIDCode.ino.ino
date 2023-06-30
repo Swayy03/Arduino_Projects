@@ -27,6 +27,7 @@ void setup()
   mfrc522.PCD_Init();   // Initiate MFRC522
 //  Serial.println("Approximate your card to the reader...");
   Serial.println();
+ //myStepper.step(-500);
  
   
  // myStepper.step(50);
@@ -65,8 +66,8 @@ void loop()
     Serial.println();
     digitalWrite(greenPin,HIGH);
     digitalWrite(redPin,HIGH);                                                                                                                              
-    myStepper.step(2248);
-    myStepper.step(-200);
+    myStepper.step(750);
+    myStepper.step(-250);
     delay(delayT1);
     digitalWrite(buzzPin,HIGH);
     delay(delayT1);
@@ -81,7 +82,7 @@ void loop()
   else if(content.substring(1) == "5B 10 63 1B" && count%2 == 0){
       digitalWrite(greenPin,HIGH);
       digitalWrite(redPin,HIGH);
-      myStepper.step(-2200);
+      myStepper.step(-500);
       digitalWrite(greenPin,LOW);
       digitalWrite(buzzPin,HIGH);
       delay(delayT1);
