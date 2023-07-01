@@ -66,8 +66,8 @@ void loop()
     Serial.println();
     digitalWrite(greenPin,HIGH);
     digitalWrite(redPin,HIGH);                                                                                                                              
-    myStepper.step(750);
-    myStepper.step(-250);
+    myStepper.step(850);
+    myStepper.step(-300);
     delay(delayT1);
     digitalWrite(buzzPin,HIGH);
     delay(delayT1);
@@ -82,7 +82,7 @@ void loop()
   else if(content.substring(1) == "5B 10 63 1B" && count%2 == 0){
       digitalWrite(greenPin,HIGH);
       digitalWrite(redPin,HIGH);
-      myStepper.step(-500);
+      myStepper.step(-550);
       digitalWrite(greenPin,LOW);
       digitalWrite(buzzPin,HIGH);
       delay(delayT1);
