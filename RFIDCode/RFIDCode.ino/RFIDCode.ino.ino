@@ -66,7 +66,7 @@ void loop()
     Serial.println();
     digitalWrite(greenPin,HIGH);
     digitalWrite(redPin,HIGH);                                                                                                                              
-    myStepper.step(850);
+    myStepper.step(1000);
     myStepper.step(-300);
     delay(delayT1);
     digitalWrite(buzzPin,HIGH);
