@@ -25,7 +25,7 @@ void roboStop(){
   BackRight.run(RELEASE);
   FrontLeft.run(RELEASE);
   FrontRight.run(RELEASE);
-  delay(1000);
+  delay(100);
 }
 void roboStopBrief(){
   BackLeft.run(RELEASE);
@@ -47,30 +47,30 @@ void roboReverse(){
   BackRight.run(BACKWARD);
   FrontLeft.run(BACKWARD);
   FrontRight.run(BACKWARD);
-  delay(700);
+  delay(400);
 }
 void roboTurnRight(){
   roboStopBrief();
   BackRight.run(BACKWARD);
   FrontRight.run(BACKWARD);
-  delay(200);
+  delay(100);
   BackLeft.run(FORWARD);
   FrontLeft.run(FORWARD);
-  delay(200);
+  delay(100);
 }
 void roboTurnLeft(){
   roboStopBrief();
   BackLeft.run(BACKWARD);
   FrontLeft.run(BACKWARD);
-  delay(200);
+  delay(100);
   BackRight.run(FORWARD);
   FrontRight.run(FORWARD);
-  delay(200);
+  delay(100);
 }
 bool roboSearchLeft(){
   for(position = 180;position>=90;position--){
     servo1.write(position);
-    delay(10);
+    delay(8);
     distance2 = sonar.ping_cm();
     Serial.println(distance2);
     if(distance2 > 20){
@@ -84,7 +84,7 @@ bool roboSearchLeft(){
 bool roboSearchRight(){
   for(position = 0;position<=90;position++){
     servo1.write(position);
-    delay(10);
+    delay(8);
     distance2 = sonar.ping_cm();
     Serial.println(distance2);
     if(distance2 > 20){
@@ -98,7 +98,7 @@ bool roboSearchRight(){
 
 
 void setup(){
-  Serial.begin (9600);
+  Serial.begin (115200);
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   servo1.attach(10);
