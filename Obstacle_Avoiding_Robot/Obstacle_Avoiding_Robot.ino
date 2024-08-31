@@ -25,6 +25,7 @@ void roboStop(){
   BackRight.run(RELEASE);
   FrontLeft.run(RELEASE);
   FrontRight.run(RELEASE);
+  Serial.println("Stopping");
   delay(100);
 }
 void roboStopBrief(){
@@ -118,6 +119,8 @@ void setup(){
 void loop(){
 
   //Set the ultrasonic sensor to send pulses in 10ms intervals
+
+  /*
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
@@ -143,6 +146,14 @@ void loop(){
   //if the distance is over 20->Move forward
   else{
     roboForward();
+  }
+  */
+  for(int i =0;i<170;i++){
+  servo1.write(i);
+  delay(5);
+  }
+  for(int i=170;i>10;i--){
+    servo1.write(i);
   }
 
 }
